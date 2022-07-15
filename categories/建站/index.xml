@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on AQiuの个人博客</title>
-        <link>https://blog.aqiu.top/post/</link>
-        <description>Recent content in Posts on AQiuの个人博客</description>
+        <title>建站 on AQiuの个人博客</title>
+        <link>https://blog.aqiu.top/categories/%E5%BB%BA%E7%AB%99/</link>
+        <description>Recent content in 建站 on AQiuの个人博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 15 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.aqiu.top/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.aqiu.top/categories/%E5%BB%BA%E7%AB%99/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo &#43; Cloudflare pages 建站指南</title>
         <link>https://blog.aqiu.top/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/</link>
         <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>

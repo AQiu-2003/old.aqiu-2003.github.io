@@ -6,53 +6,37 @@
         <description>Recent content in Categories on AQiuの个人博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.aqiu.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.aqiu.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Web</title>
+        <link>https://blog.aqiu.top/categories/web/</link>
+        <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.aqiu.top/categories/web/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>建站</title>
+        <link>https://blog.aqiu.top/categories/%E5%BB%BA%E7%AB%99/</link>
+        <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.aqiu.top/categories/%E5%BB%BA%E7%AB%99/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>教程</title>
+        <link>https://blog.aqiu.top/categories/%E6%95%99%E7%A8%8B/</link>
+        <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.aqiu.top/categories/%E6%95%99%E7%A8%8B/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Test</title>
         <link>https://blog.aqiu.top/categories/test/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://blog.aqiu.top/categories/test/</guid>
         <description>&lt;img src="https://blog.aqiu.top/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
-        </item>
-        <item>
-        <title>测试</title>
-        <link>https://blog.aqiu.top/categories/%E6%B5%8B%E8%AF%95/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.aqiu.top/categories/%E6%B5%8B%E8%AF%95/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>syntax</title>
-        <link>https://blog.aqiu.top/categories/syntax/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.aqiu.top/categories/syntax/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>themes</title>
-        <link>https://blog.aqiu.top/categories/themes/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.aqiu.top/categories/themes/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>تجربة</title>
-        <link>https://blog.aqiu.top/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9/</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.aqiu.top/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>تجربة مع فراغات</title>
-        <link>https://blog.aqiu.top/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9-%D9%85%D8%B9-%D9%81%D8%B1%D8%A7%D8%BA%D8%A7%D8%AA/</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://blog.aqiu.top/categories/%D8%AA%D8%AC%D8%B1%D8%A8%D8%A9-%D9%85%D8%B9-%D9%81%D8%B1%D8%A7%D8%BA%D8%A7%D8%AA/</guid>
-        <description></description>
         </item>
         
     </channel>

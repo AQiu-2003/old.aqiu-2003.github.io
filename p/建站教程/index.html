@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='分享我的建站流程'><title>Hugo &#43; Cloudflare pages 建站指南</title>
+
+<link rel='canonical' href='https://blog.aqiu.top/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/'>
+
+<link rel="stylesheet" href="/scss/style.min.ac77dcf8b111b51da39a92990f431923f210f3876d85798a2125667f96dc33a4.css"><meta property='og:title' content='Hugo &#43; Cloudflare pages 建站指南'>
+<meta property='og:description' content='分享我的建站流程'>
+<meta property='og:url' content='https://blog.aqiu.top/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/'>
+<meta property='og:site_name' content='AQiuの个人博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-07-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-07-15T00:00:00&#43;00:00'/><meta property='og:image' content='https://blog.aqiu.top/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cover.png' />
+<meta name="twitter:title" content="Hugo &#43; Cloudflare pages 建站指南">
+<meta name="twitter:description" content="分享我的建站流程"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.aqiu.top/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cover.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/heads_hu11d924a3e527f4826f50c609074c433d_50508_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥳</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">AQiuの个人博客</a></h1>
+            <h2 class="site-description">欢迎来到我的个人博客网站，我会在这里分享一些学习、生活中的经验</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/89032480'
+                        target="_blank"
+                        title="bilibili"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="200px" height="200.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M306.005333 117.632L444.330667 256h135.296l138.368-138.325333a42.666667 42.666667 0 0 1 60.373333 60.373333L700.330667 256H789.333333A149.333333 149.333333 0 0 1 938.666667 405.333333v341.333334a149.333333 149.333333 0 0 1-149.333334 149.333333h-554.666666A149.333333 149.333333 0 0 1 85.333333 746.666667v-341.333334A149.333333 149.333333 0 0 1 234.666667 256h88.96L245.632 177.962667a42.666667 42.666667 0 0 1 60.373333-60.373334zM789.333333 341.333333h-554.666666a64 64 0 0 0-63.701334 57.856L170.666667 405.333333v341.333334a64 64 0 0 0 57.856 63.701333L234.666667 810.666667h554.666666a64 64 0 0 0 63.701334-57.856L853.333333 746.666667v-341.333334A64 64 0 0 0 789.333333 341.333333zM341.333333 469.333333a42.666667 42.666667 0 0 1 42.666667 42.666667v85.333333a42.666667 42.666667 0 0 1-85.333333 0v-85.333333a42.666667 42.666667 0 0 1 42.666666-42.666667z m341.333334 0a42.666667 42.666667 0 0 1 42.666666 42.666667v85.333333a42.666667 42.666667 0 0 1-85.333333 0v-85.333333a42.666667 42.666667 0 0 1 42.666667-42.666667z" fill="#bababa" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/aqiu-2003'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="200px" height="200.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M512 42.666667A464.64 464.64 0 0 0 42.666667 502.186667 460.373333 460.373333 0 0 0 363.52 938.666667c23.466667 4.266667 32-9.813333 32-22.186667v-78.08c-130.56 27.733333-158.293333-61.44-158.293333-61.44a122.026667 122.026667 0 0 0-52.053334-67.413333c-42.666667-28.16 3.413333-27.733333 3.413334-27.733334a98.56 98.56 0 0 1 71.68 47.36 101.12 101.12 0 0 0 136.533333 37.973334 99.413333 99.413333 0 0 1 29.866667-61.44c-104.106667-11.52-213.333333-50.773333-213.333334-226.986667a177.066667 177.066667 0 0 1 47.36-124.16 161.28 161.28 0 0 1 4.693334-121.173333s39.68-12.373333 128 46.933333a455.68 455.68 0 0 1 234.666666 0c89.6-59.306667 128-46.933333 128-46.933333a161.28 161.28 0 0 1 4.693334 121.173333A177.066667 177.066667 0 0 1 810.666667 477.866667c0 176.64-110.08 215.466667-213.333334 226.986666a106.666667 106.666667 0 0 1 32 85.333334v125.866666c0 14.933333 8.533333 26.88 32 22.186667A460.8 460.8 0 0 0 981.333333 502.186667 464.64 464.64 0 0 0 512 42.666667" fill="#bababa" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='#ZgotmplZ'
+                        target="_blank"
+                        title="QQ"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="200px" height="200.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M824.8 613.2c-16-51.4-34.4-94.6-62.7-165.3C766.5 262.2 689.3 112 511.5 112 331.7 112 256.2 265.2 261 447.9c-28.4 70.8-46.7 113.7-62.7 165.3-34 109.5-23 154.8-14.6 155.8 18 2.2 70.1-82.4 70.1-82.4 0 49 25.2 112.9 79.8 159-26.4 8.1-85.7 29.9-71.6 53.8 11.4 19.3 196.2 12.3 249.5 6.3 53.3 6 238.1 13 249.5-6.3 14.1-23.8-45.3-45.7-71.6-53.8 54.6-46.2 79.8-110.1 79.8-159 0 0 52.1 84.6 70.1 82.4 8.5-1.1 19.5-46.4-14.5-155.8z" fill="#bababa" /></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/">
+                <img src="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cover_hu46ee1e77c4ca27381686bc1aadb2a1c2_154017_800x0_resize_box_3.png"
+                        srcset="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cover_hu46ee1e77c4ca27381686bc1aadb2a1c2_154017_800x0_resize_box_3.png 800w, /p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cover_hu46ee1e77c4ca27381686bc1aadb2a1c2_154017_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="425" 
+                        loading="lazy"
+                        alt="Featured image of post Hugo &#43; Cloudflare pages 建站指南" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/web/" >
+                Web
+            </a>
+        
+            <a href="/categories/%E5%BB%BA%E7%AB%99/" >
+                建站
+            </a>
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B/" >
+                教程
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/">Hugo &#43; Cloudflare pages 建站指南</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            分享我的建站流程
+        </h3>
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2022 Jul 15</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>建立自己的个人博客站点，我有以下几个要求：</p>
+<ol>
+<li>首先要完全免费，且在可以预见的未来里不会无故关闭；</li>
+<li>在国内访问顺畅，图片能正常加载；</li>
+<li>拥有完全掌控权，且管理相对方便，也不容易丢失数据。</li>
+</ol>
+<p>根据以上三点，我建立起了一个基于 Hugo + Cloudflare Pages 的个人博客网站：<a class="link" href="blog.aqiu.top" >AQiuの个人博客</a>，并在下文对搭建、自动化部署等过程进行详解，希望对您有所帮助。</p>
+<h2 id="使用hugo生成静态站点">使用Hugo生成静态站点</h2>
+<p>Hugo是近年来新兴的博客建站工具，使用Go实现，并采用Markdown进行文章编辑。主题多样且安装快捷，自定义程度很高，也可以通过js嵌入评论系统等高级功能。而且因为生成的是静态站点，所以几乎不对服务器性能有要求。但由于配置过程没有可视化，所以只在程序员圈子里比较流行。</p>
+<h3 id="安装hugo">安装Hugo</h3>
+<p>可以根据<a class="link" href="https://gohugo.io/getting-started/"  target="_blank" rel="noopener"
+    >Hugo官方网站</a>的讲解一步步进行，在这里只列出了重点步骤，如果在安装过程中遇到问题请参阅官方文档。如果不习惯英文也可以参考<a class="link" href="https://www.gohugo.org"  target="_blank" rel="noopener"
+    >Hugo中文网站</a>的说明，但该网站似乎已经年久失修，也许会出现与现在版本不相符的情况。</p>
+<h4 id="macos-系统">MacOS 系统</h4>
+<p>如果您还没有安装<a class="link" href="https://brew.sh/index_zh-cn"  target="_blank" rel="noopener"
+    >Homebrew</a>或者<a class="link" href="https://www.macports.org"  target="_blank" rel="noopener"
+    >MacPorts</a>，请先点击前面的链接安装其中之一，这里推荐安装Homebrew。您也可以使用国内源安装：<a class="link" href="https://brew.idayer.com"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>然后在终端中执行以下命令来安装Hugo：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">brew install hugo    //使用Homebrew
+</span></span><span class="line"><span class="cl">port install hugo    //使用MacPorts
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="linux-系统">Linux 系统</h4>
+<p>使用以下命令来安装Hugo：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt-get install hugo    //对于Debian、Ubuntu等
+</span></span><span class="line"><span class="cl">sudo pacman -Syu hugo    //对于Arch Linux、Manjaro等
+</span></span><span class="line"><span class="cl">sudo dnf install hugo    //对于Fedora、Red Hat、CentOS等
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="windows-系统">Windows 系统</h4>
+<p>Windows系统安装Hugo会稍微繁琐一些，因为绝大多数的Windows用户并不会安装包管理器，所以这里不会列出使用<a class="link" href="https://chocolatey.org/"  target="_blank" rel="noopener"
+    >Chocolatey</a>或者<a class="link" href="https://scoop.sh/"  target="_blank" rel="noopener"
+    >Scoop</a>来安装Hugo的办法，如有需要，您可以前往官网查看：<a class="link" href="https://gohugo.io/getting-started/installing/#chocolatey-windows"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>以下为安装Hugo最快速的办法：</p>
+<ol>
+<li>前往Hugo的GitHub Release页面：<a class="link" href="https://github.com/gohugoio/hugo/releases/latest"  target="_blank" rel="noopener"
+    >链接</a></li>
+<li>找到并下载适合您电脑的版本，一般情况下为Windows-64bit</li>
+</ol>
+<p><img src="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/hugo-github-release.png"
+	width="988"
+	height="806"
+	srcset="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/hugo-github-release_hud5e7123ef11182b37e3f5c45c811ad1b_101074_480x0_resize_box_3.png 480w, /p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/hugo-github-release_hud5e7123ef11182b37e3f5c45c811ad1b_101074_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="如果对主题有更高的自定义需求，您也可以下载extended版本"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="122"
+		data-flex-basis="294px"
+	
+></p>
+<ol start="3">
+<li>将压缩包中的<code>hugo.exe</code>放入<code>C:\Windows\System32\</code>文件夹下</li>
+<li>打开命令提示符（cmd）输入以下指令</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果正确显示了Hugo版本而没有报错的话，就代表安装正确了。</p>
+<h3 id="创建hugo站点">创建Hugo站点</h3>
+<p>通过终端找到要放置网站的目录后，使用以下命令建立新Hugo站点：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo new site blog-name    //将blog-name替换成您的博客名
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Hugo会在当前目录下新建一个以“blog-name”命名的新文件夹，并在其中释放站点文件。之后请您cd进入此目录。</p>
+<p><img src="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/hugo-new-site.png"
+	width="1418"
+	height="876"
+	srcset="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/hugo-new-site_hu38d90ad5cfa90f03dfd61bea59640a3d_155496_480x0_resize_box_3.png 480w, /p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/hugo-new-site_hu38d90ad5cfa90f03dfd61bea59640a3d_155496_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="161"
+		data-flex-basis="388px"
+	
+></p>
+<h3 id="安装hugo主题">安装Hugo主题</h3>
+<p>Hugo社区提供了丰富的主题供用户使用，可以通过官网的<a class="link" href="https://themes.gohugo.io"  target="_blank" rel="noopener"
+    >Themes</a>页面根据预览挑选喜欢的主题。一般主题的README页面都会提供详细的安装配置说明，这里我以<a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack"  target="_blank" rel="noopener"
+    >hugo-theme-stack</a>为例，简单演示一下配置过程。</p>
+<p>您可以直接将主题仓库克隆到<code>themes</code>文件夹下来使用，但这不方便后面的版本管理和主题更新，如果您选择的主题已有很长时间没有更新其实也可以这样做。推荐的做法是，使用Git的<code>submodule</code>子模块功能配置依赖关系。这也要求您的整个网站使用Git来进行版本管理。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-v" data-lang="v"><span class="line"><span class="cl"><span class="nv">git</span> <span class="nv">init</span>    <span class="c1">//初始化Git
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">git</span> <span class="nv">submodule</span> <span class="nv">add</span> <span class="nv">https</span><span class="p">:</span><span class="c1">//github.com/AQiu-2003/hugo-theme-stack themes/hugo-theme-stack
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>需要注意的是，如果您之后有使用GitHub等管理网站，在其他设备上克隆项目时子模块并不会一起被克隆，需要在<code>git clone</code>后加上<code>--recursive</code>，或者在克隆到本地后执行以下步骤：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-v" data-lang="v"><span class="line"><span class="cl"><span class="nv">git</span> <span class="nv">submodule</span> <span class="nv">init</span>    <span class="c1">//初始化本地子模块配置文件  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">git</span> <span class="nv">submodule</span> <span class="nv">update</span>    <span class="c1">//更新项目，抓取子模块内容。
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>主题安转完毕后，将<code>./themes/hugo-theme-stack/exampleSite/</code>文件夹中的文件复制到站点根目录下覆盖，并删除原有的<code>config.toml</code>文件。<code>config.toml</code>或<code>config.yaml</code>为Hugo站点的配置文件，里面也包含了大部分主题的可配置字段。您可以根据配置文件中的注释和主题说明文档来配置站点和主题。</p>
+<p><img src="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/config-yaml.png"
+	width="2120"
+	height="1608"
+	srcset="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/config-yaml_hu9d7f271a04635a38e6200bb009f96fca_495327_480x0_resize_box_3.png 480w, /p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/config-yaml_hu9d7f271a04635a38e6200bb009f96fca_495327_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="hugo-theme-stack 的 config.yaml"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="316px"
+	
+></p>
+<h3 id="发布与管理文章">发布与管理文章</h3>
+<p>可以通过<code>hugo new</code>命令发布新文章，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo new post/about.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>和直接在<code>./content/post/</code>下新建<code>about.md</code>的效果一样，之后您可以继续使用VSCode等对文章进行编辑。您也可以将<code>./content/post/</code>文件夹加入如Obsidian这样的编辑器实现更好的编辑体验。</p>
+<p><img src="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/obsidian-shot.png"
+	width="3096"
+	height="1810"
+	srcset="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/obsidian-shot_hu7f7ce0460be78d406e8b5fb2e6225217_564016_480x0_resize_box_3.png 480w, /p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/obsidian-shot_hu7f7ce0460be78d406e8b5fb2e6225217_564016_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="Obsidian写文章的体验"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="171"
+		data-flex-basis="410px"
+	
+></p>
+<p>编辑文章需要您有Markdown语法基础，如果您还不会使用Markdown，互联网上可以找到许多教程，如：<a class="link" href="https://markdown.com.cn"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>Markdown文件开头使用 <strong>&mdash;</strong> 隔离的部分存储了文章的标题、时间和一些参数（与使用的主题有关）。当参数<code>draft</code>为<code>true</code>时，Hugo在生成静态页面时会自动跳过此文件，将<code>true</code>改为<code>false</code>来真正发布文章。</p>
+<h3 id="本地调试站点">本地调试站点</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo server
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Hugo 包含了内置的高性能 Web Server 。通过简单的运行上面这条指令， Hugo 将会找一个有效的端口运行服务器（一般为<a class="link" href="http://localhost:1313"  target="_blank" rel="noopener"
+    >http://localhost:1313</a>)用于您的文章，并且可以自动检测文章更新来刷新网页，无需每次都重新生成。</p>
+<p><img src="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/hugo-server.png"
+	width="2042"
+	height="1104"
+	srcset="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/hugo-server_hu92453caa3c6ab3f42b3e991476119656_277603_480x0_resize_box_3.png 480w, /p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/hugo-server_hu92453caa3c6ab3f42b3e991476119656_277603_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="运行Web Server"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="184"
+		data-flex-basis="443px"
+	
+></p>
+<h3 id="生成静态站点">生成静态站点</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在站点根目录执行<code>hugo</code>命令生成最终页面，最终页面会储存在<code>public</code>文件夹内。之后您就可以将网站上传至GitHub，或直接进行部署。</p>
+<h2 id="将网站部署到-cloudflare-pages">将网站部署到 Cloudflare Pages</h2>
+<p>访问 <a class="link" href="https://www.cloudflare.com/zh-cn/"  target="_blank" rel="noopener"
+    >Cloudflare官网</a>点击页面右上角的“注册”按钮进行注册，如果您已经有Cloudflare账号可以直接登陆。</p>
+<p><img src="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-homepage.png"
+	width="2768"
+	height="1732"
+	srcset="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-homepage_hu6c81ce8b9666763f268911051ad1ad75_384348_480x0_resize_box_3.png 480w, /p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-homepage_hu6c81ce8b9666763f268911051ad1ad75_384348_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="Cloudflare官网"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="159"
+		data-flex-basis="383px"
+	
+></p>
+<p>登陆后点击控制台页面左侧的<code>Pages</code>，然后是<code>创建项目</code>。因为我之前已经部署过Pages，您看到的页面可能与我的不同，但没关系，总体功能是一样的。</p>
+<p><img src="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-dash.png"
+	width="2768"
+	height="1732"
+	srcset="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-dash_huc39e56745fe3c818f91ea33ea47f8b64_304788_480x0_resize_box_3.png 480w, /p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-dash_huc39e56745fe3c818f91ea33ea47f8b64_304788_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="控制台页面"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="159"
+		data-flex-basis="383px"
+	
+></p>
+<h3 id="连接到git">连接到Git</h3>
+<p>如果您已将站点<code>push</code>到GitHub或者GitLab，可以选择<code>连接到Git</code>并链接您的账户，选择要部署的存储库。</p>
+<p>值得注意的是，如果您将整个站点根目录使用Git进行管理，需要将<code>根目录（高级）</code>中的路径改为<code>public</code>才能正确部署。</p>
+<p><img src="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-public.png"
+	width="1124"
+	height="352"
+	srcset="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-public_hued19a9c367fdcaf4bcea881cd2cb631a_33935_480x0_resize_box_3.png 480w, /p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-public_hued19a9c367fdcaf4bcea881cd2cb631a_33935_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="修改路径为public"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="319"
+		data-flex-basis="766px"
+	
+></p>
+<h3 id="直接上传">直接上传</h3>
+<p>您可以将整个<code>public</code>文件夹直接上传并部署到Cloudflare Pages，但从长远角度来看不推荐这样做，除非您的网站不会经常发生改变（如一些不经常更新的说明文档等）。</p>
+<p><img src="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-direct.png"
+	width="2768"
+	height="1950"
+	srcset="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-direct_hu99a68914a2fe4c66f2ab02c3cd54ec7e_258324_480x0_resize_box_3.png 480w, /p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-direct_hu99a68914a2fe4c66f2ab02c3cd54ec7e_258324_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="上传public文件夹"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="141"
+		data-flex-basis="340px"
+	
+></p>
+<h3 id="设置别名">设置别名</h3>
+<p>如果您对Cloudflare提供的<code>pages.dev</code>一级域名不满意，您也可以设置别名来访问到您的站点。鉴于Cloudflare上的域名相对较贵，您可以从其他服务商购买域名后通过<code>CNAME</code>解析到原网址。</p>
+<p><img src="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-name.png"
+	width="2768"
+	height="1950"
+	srcset="/p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-name_hud41b1b1692530fd4560cefdc0226eb67_284934_480x0_resize_box_3.png 480w, /p/%E5%BB%BA%E7%AB%99%E6%95%99%E7%A8%8B/cloudflare-name_hud41b1b1692530fd4560cefdc0226eb67_284934_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="自定义域"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="141"
+		data-flex-basis="340px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "aqiu-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 AQiuの个人博客
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.12.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#使用hugo生成静态站点">使用Hugo生成静态站点</a>
+      <ol>
+        <li><a href="#安装hugo">安装Hugo</a>
+          <ol>
+            <li><a href="#macos-系统">MacOS 系统</a></li>
+            <li><a href="#linux-系统">Linux 系统</a></li>
+            <li><a href="#windows-系统">Windows 系统</a></li>
+          </ol>
+        </li>
+        <li><a href="#创建hugo站点">创建Hugo站点</a></li>
+        <li><a href="#安装hugo主题">安装Hugo主题</a></li>
+        <li><a href="#发布与管理文章">发布与管理文章</a></li>
+        <li><a href="#本地调试站点">本地调试站点</a></li>
+        <li><a href="#生成静态站点">生成静态站点</a></li>
+      </ol>
+    </li>
+    <li><a href="#将网站部署到-cloudflare-pages">将网站部署到 Cloudflare Pages</a>
+      <ol>
+        <li><a href="#连接到git">连接到Git</a></li>
+        <li><a href="#直接上传">直接上传</a></li>
+        <li><a href="#设置别名">设置别名</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
